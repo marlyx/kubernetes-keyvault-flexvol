@@ -59,7 +59,7 @@ func (adapter *KeyvaultFlexvolumeAdapter) Run() error {
 		objectName := objectNames[i]
 		// objectVersions are optional so we take as much as we can
 		objectVersion := ""
-		if len(objectVersions) == len(objectNames) {
+		if i < len(objectVersions) {
 			objectVersion = objectVersions[i]
 		}
 		glog.V(0).Infof("retrieving %s %s (version: %s)", objectType, objectName, objectVersion)
